@@ -18,7 +18,6 @@ RUN adduser --disabled-password --home /home/ergo --uid 9052 --gecos "ErgoPlatfo
 USER ergo
 EXPOSE 9020 9052 9030 9053
 WORKDIR /home/ergo
-VOLUME ["/home/ergo/.ergo"]
 ENV MAX_HEAP 3G
 ENV _JAVA_OPTIONS "-Xmx${MAX_HEAP}"
 COPY --from=builder /mnt/ergo.jar /home/ergo/ergo.jar
